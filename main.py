@@ -19,7 +19,6 @@ def reply_handler(message: types.Message):
         bot.send_message(message.chat.id, f"Вы ответили на сообщение бота при старте. Ваше сообщение: '{message.text}'."
                                           f" Также отвечайте на сообщения,"
                                           "которые будут приходить здесь 🙂")
-        bot.send_message(message.chat.id, "Поступило сообщение от @msnetwin: \n\n<b>Круто!</b>", parse_mode="HTML")
     elif not message.reply_to_message.text.__contains__("Вы ответили на сообщение пользователя"):
         user = "@" + message.reply_to_message.text.split(":")[0].split('@')[1]
         user_id = "@" + message.reply_to_message.text.split("(")[1].replace(")", "")
